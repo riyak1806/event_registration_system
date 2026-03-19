@@ -20,3 +20,14 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+from django.contrib import admin
+from django.urls import path
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to Event Registration System 🚀")
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home),  # THIS IS IMPORTANT
+]
